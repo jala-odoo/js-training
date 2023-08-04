@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.TodoList" owl="1">
+        <div class="bordered-box">
+        <div class="rounded p-3 bg-info "> 
+            <input type="text" class="form-control" placeholder="Enter a new task" t-on-keyup="addTodo" t-ref="todoListInput"/>
+            <t t-foreach="todoList" t-as="todo" t-key="todo.id">
+                <Todo id="todo.id" description="todo.description" done="todo.done" toggleState.bind="toggleDone" removeTodo.bind="removeTodo"/>
+            </t>
+        </div>
+        </div>
+    </t>
+</templates>
